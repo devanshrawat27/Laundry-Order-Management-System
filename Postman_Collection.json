@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "c8e88e8e-8e8e-4e8e-ae8e-8e8e8e8e8e8e",
+		"name": "Launderly Mini-OMS",
+		"description": "API collection for the Laundry Order Management System. Includes authentication headers.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{ "key": "password", "value": "admin123", "type": "string" },
+								{ "key": "username", "value": "admin", "type": "string" }
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerName\": \"John Doe\",\n  \"phoneNumber\": \"9876543210\",\n  \"garments\": [\n    { \"type\": \"SHIRT\", \"quantity\": 2 },\n    { \"type\": \"PANTS\", \"quantity\": 1 }\n  ]\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders",
+							"host": ["{{baseUrl}}"],
+							"path": ["orders"]
+						}
+					}
+				},
+				{
+					"name": "List Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/orders?page=1&limit=10&status=RECEIVED",
+							"host": ["{{baseUrl}}"],
+							"path": ["orders"],
+							"query": [
+								{ "key": "page", "value": "1" },
+								{ "key": "limit", "value": "10" },
+								{ "key": "status", "value": "RECEIVED" }
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Status",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{ "key": "password", "value": "admin123", "type": "string" },
+								{ "key": "username", "value": "admin", "type": "string" }
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"PROCESSING\"\n}",
+							"options": { "raw": { "language": "json" } }
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders/ORD-20260416-0001/status",
+							"host": ["{{baseUrl}}"],
+							"path": ["orders", "ORD-20260416-0001", "status"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Get Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/dashboard",
+							"host": ["{{baseUrl}}"],
+							"path": ["dashboard"]
+						}
+					}
+				},
+				{
+					"name": "Get Customers Aggregation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/dashboard/customers",
+							"host": ["{{baseUrl}}"],
+							"path": ["dashboard", "customers"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": { "type": "text/javascript", "exec": [""] }
+		},
+		{
+			"listen": "test",
+			"script": { "type": "text/javascript", "exec": [""] }
+		}
+	],
+	"variable": [
+		{ "key": "baseUrl", "value": "http://localhost:5000/api/v1", "type": "string" }
+	]
+}

@@ -1,0 +1,21 @@
+import { Outlet } from 'react-router-dom';
+import Navbar from './Navbar';
+import { Toaster } from 'react-hot-toast';
+
+export default function Layout() {
+  return (
+    <div className="min-h-screen flex flex-col bg-surface-50">
+      <Navbar />
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+        <Outlet />
+      </main>
+      <Toaster position="top-right" toastOptions={{
+        className: 'text-sm font-medium rounded-xl border border-surface-200 shadow-sm',
+        style: {
+          background: '#fff',
+          color: '#1f2937',
+        },
+      }} />
+    </div>
+  );
+}

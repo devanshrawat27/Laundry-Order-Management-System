@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: laundry-oms-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node src/app.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: # leave blank or set to your prod Database URL via Render Dashboard
+      - key: AUTH_USERNAME
+        value: admin
+      - key: AUTH_PASSWORD
+        value: admin123
