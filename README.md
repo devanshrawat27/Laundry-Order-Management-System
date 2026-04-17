@@ -6,7 +6,7 @@
 [![Tailwind](https://img.shields.io/badge/Styling-Tailwind%20CSS-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-**Launderly** is a high-performance, lightweight Order Management System (OMS) designed for modern laundry businesses. Built with an **AI-First engineering philosophy**, this project demonstrates how elite developers leverage agentic AI to ship professional, production-ready full-stack applications in record time.
+**Launderly** is a high-performance, lightweight Order Management System (OMS) designed for modern laundry businesses. Built with an **AI-Assisted engineering workflow**, this project demonstrates how modern developers leverage advanced AI tools to ship professional, production-ready full-stack applications in record time.
 
 ---
 
@@ -14,7 +14,7 @@
 1. [🏗 Architecture Overview](#-architecture-overview)
 2. [⚡ Quick Start (60s Setup)](#-quick-start-60s-setup)
 3. [✨ Engineering Highlights](#-engineering-highlights)
-4. [🤖 AI Synergy Report (Critical)](#-ai-synergy-report-critical)
+4. [🤖 AI Usage Report (Critical)](#-ai-usage-report-critical)
 5. [📺 Demo & API Deliverables](#-demo--api-deliverables)
 6. [⚖️ Tradeoffs & Scalability](#-tradeoffs--scalability)
 
@@ -44,10 +44,10 @@ graph LR
 ### 1. Clone & Install
 ```bash
 # Clone the repository
-git clone <repository-link>
-cd laundry-oms
+git clone https://github.com/devanshrawat27/Laundry-Order-Management-System.git
+cd Laundry-Order-Management-System
 
-# Install dependencies (Parallel handles)
+# Install dependencies
 cd laundry-oms-backend && npm install
 cd ../laundry-oms-frontend && npm install
 ```
@@ -76,30 +76,34 @@ VITE_API_URL=http://localhost:5000/api/v1
 - **High-Fidelity Dashboard:** Real-time metrics powered by MongoDB Aggregation Pipelines (Revenue, Density, Status Distribution).
 - **Ownership Mindset Extras:** 
     - **Status Audit Logs:** Full timestamped history of every transition.
-    - **CRM Portal:** Advanced customer aggregation showing lifetime value and order frequency.
+    - **Customer CRM Tab:** Built a complex MongoDB aggregation that automatically groups orders to show a dedicated "Customers" portal with lifetime value and order frequency statistics.
 
 ---
 
-## 🤖 AI Synergy Report (Critical)
+## 🤖 AI Usage Report (Critical)
 
 > [!IMPORTANT]
-> This project was developed using a **0-to-1 AI Acceleration** strategy, primarily utilizing Google Gemini 1.5 Pro and Anthropic Claude 3.5 Sonnet.
+> This project was developed by leveraging **ChatGPT (GPT-4)** and **GitHub Copilot** as core pair-programming partners to accelerate the development lifecycle.
 
-### How AI was Leveraged:
-1.  **Structural Scaffolding:** I fed a structured PRD into the AI to generate the boilerplate Service/Controller architecture.
-2.  **UI Generation:** I provided a Crimson/Cream branding concept and used AI to translate the aesthetic into a responsive Tailwind system.
-3.  **Complex Logic Mapping:** I used AI to replicate MongoDB's `$group` and `$sort` logic for the JS-fallback engine when DB connection fails.
+### How AI helped:
+1.  **Architecture Scaffolding:** I used ChatGPT to quickly brainstorm and scaffold the initial Express.js directory structure and Mongoose schema definitions based on my PRD.
+2.  **UI Components:** I described my specific "Crimson & Cream" design vision to the AI, which generated the base Tailwind CSS configurations and responsive React components for the Dashboard and Order forms.
+3.  **Algorithmic Logic:** AI assisted in writing the logic for the collision-safe Order ID generator and the complex JavaScript `.reduce()` logic used in our in-memory fallback engine.
 
-### Where I Improved AI Output:
-- **Business Logic Enforcement:** The AI initially allowed reverting statuses (e.g., from `DELIVERED` back to `READY`). I manually implemented a `STATUS_TRANSITIONS` guard to enforce business rules.
-- **Credential Parsing:** AI struggled with Node's SRV record bugs on local Windows machines. I manually corrected the URI to a legacy connection string to ensure reliability.
-- **Currency Normalization:** Corrected AI-generated US formatting to comply with Indian Rupee (`₹`) requirements.
+### Sample Prompts Used:
+- *"Generate an Express.js service for a Laundry OMS with an endpoint that calculates a 2-day delivery estimate based on current UTC time."*
+- *"Build a responsive React table component using Tailwind CSS that displays order status with custom badges for RECEIVED, PROCESSING, READY, and DELIVERED."*
+
+### Where I Fixed/Improved AI Code:
+- **Business Logic Guards:** The AI generated standard CRUD routes but initially missed the specific forward-only requirement for order statuses. I had to manually implement a transition-map guard in the `order.service.js` to ensure data integrity.
+- **Database Resilience:** Initial AI-suggested database code crashed the app when MongoDB was offline. I refactored it into the current `Auto-Fallback Engine` to ensure the project remains usable even without a database connection.
+- **Environment Handling:** I corrected AI-generated URI strings to handle legacy SRV record issues and ensured proper environment variable masking for security.
 
 ---
 
 ## 📺 Demo & API Deliverables
 
-- **🖥 Live UI Demo:** Open [http://localhost:5173](http://localhost:5173) after running.
+- **🖥 Live UI Demo:** [Launderly Web App](https://laundry-order-management-system-1gy47hlxs.vercel.app)
 - **📜 API Collection:** Use the `Postman_Collection.json` file in the root directory for direct endpoint testing.
     - **Auth Credentials:** User: `admin` | Password: `admin123`
 
@@ -111,4 +115,4 @@ VITE_API_URL=http://localhost:5000/api/v1
 - **Future Scale:** Would implement **Redis Caching** for the dashboard numbers and **RabbitMQ** for processing status-change background notifications (SMS/Email triggers).
 
 ---
-*Developed with ❤️ and AI by devanshrawat*
+*Developed with ❤️ by devanshrawat*
