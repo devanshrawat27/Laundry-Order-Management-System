@@ -4,7 +4,6 @@
 [![React](https://img.shields.io/badge/Frontend-React%2018-61DAFB?logo=react)](https://reactjs.org/)
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB%20Atlas-47A248?logo=mongodb)](https://www.mongodb.com/)
 [![Tailwind](https://img.shields.io/badge/Styling-Tailwind%20CSS-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 **Launderly** is a high-performance, lightweight Order Management System (OMS) designed for modern laundry businesses. Built with an **AI-Assisted engineering workflow**, this project demonstrates how modern developers leverage advanced AI tools to ship professional, production-ready full-stack applications in record time.
 
