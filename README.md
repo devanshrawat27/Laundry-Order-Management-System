@@ -11,11 +11,11 @@
 
 ## 📖 Table of Contents
 1. [🏗 Architecture Overview](#-architecture-overview)
-2. [⚡ Quick Start (60s Setup)](#-quick-start-60s-setup)
-3. [✨ Engineering Highlights](#-engineering-highlights)
-4. [🤖 AI Usage Report (Critical)](#-ai-usage-report-critical)
-5. [📺 Demo & API Deliverables](#-demo--api-deliverables)
-6. [⚖️ Tradeoffs & Scalability](#-tradeoffs--scalability)
+3. [⚡ Quick Start (60s Setup)](#-quick-start-60s-setup)
+4. [✨ Engineering Highlights](#-engineering-highlights)
+5. [🤖 AI Usage Report (Critical)](#-ai-usage-report-critical)
+6. [📺 Demo & API Deliverables](#-demo--api-deliverables)
+7. [⚖️ Tradeoffs & Scalability](#-tradeoffs--scalability)
 
 ---
 
